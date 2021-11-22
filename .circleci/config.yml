@@ -7,18 +7,17 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
-      -
-        restore_cache:
+      - restore_cache:
           name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      -
-        run: 'yarn install'
-      -
-        save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - save_cache:
           name: Save Yarn Package Cache
           key: 'yarn-packages-{{ checksum "yarn.lock" }}'
           paths:
-            - ~/.cache/yarn
-      -
-        run: 'yarn test'
+              - ~/.cache/yarn
+      - run:
+          name: Run tests
+          command: yarn test
