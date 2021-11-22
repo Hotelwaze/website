@@ -21,7 +21,8 @@
     "babel-jest": "^27.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.2",
-    "jest": "^27.3.1"
+    "jest": "^27.3.1",
+    "generate-zip": "sh ./scripts/generate-zip.sh"
   },
   "jest": {
     "testEnvironment": "jsdom",
