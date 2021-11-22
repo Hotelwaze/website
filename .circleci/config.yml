@@ -35,7 +35,7 @@ jobs:
           command: "sudo pip3 install awsebcli botocore==1.19.63\npip3 install awscli\n"
       - run:
           name: Deploy to Elastic Beanstalk
-          command: "eb use $CIRCLE_BRANCH-hotelwaze-website --region us-west-1\ntimeout 1m eb deploy -v --staged || true\n"
+          command: "eb use $CIRCLE_BRANCH-hotelwaze-website --region us-west-1\ntimeout 1m eb deploy \n"
 workflows:
   version: 2
   Test_and_Deploy:
