@@ -29,13 +29,10 @@ jobs:
       -
         run:
           name: Install Python
-          command: "sudo apt-get -y -qq update\nsudo apt-get -y -qq install python3.6\necho 'export PATH=/root/.local/bin/:$PATH' >> $BASH_ENV\necho 'export PATH=/home/circleci/.local/bin/:$PATH' >> $BASH_ENV\n"
-      - run:
-          name: Install pip
-          command: "curl -O https://bootstrap.pypa.io/get-pip.py\npython3.6 get-pip.py --user\n"
+          command: "sudo apt-get -y -qq update\nsudo apt-get install python3-pip python3-dev build-essential\necho 'export PATH=/root/.local/bin/:$PATH' >> $BASH_ENV\necho 'export PATH=/home/circleci/.local/bin/:$PATH' >> $BASH_ENV\n"
       - run:
           name: Install AWS EB CLI & S3 CLI
-          command: "pip install awsebcli --upgrade --user\npip install awscli --upgrade --user\n"
+          command: "sudo pip3 install awsebcli --upgrade --user\npip3 install awscli --upgrade --user\n"
       - run:
           name: Deploy to Elastic Beanstalk
           command: "eb use $CIRCLE_BRANCH-hotelwaze-website\ntimeout 1m eb deploy -v --staged || true\n"
