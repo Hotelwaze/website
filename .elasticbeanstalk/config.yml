@@ -1,0 +1,25 @@
+branch-defaults:
+  development:
+    environment: staging-hotelwaze-website
+  master:
+    environment: master-hotelwaze-website
+  staging:
+    environment: staging-hotelwaze-website
+deploy:
+  artifact: dist/hotelwaze-website.zip
+environment-defaults:
+  staging-hotelwaze-website:
+    branch: null
+    repository: null
+global:
+  application_name: hotelwaze-website-next
+  default_ec2_keyname: null
+  default_platform: Node.js
+  default_region: us-west-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  sc: git
+  workspace_type: Application
