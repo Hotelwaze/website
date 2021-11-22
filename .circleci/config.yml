@@ -40,16 +40,16 @@ jobs:
       - run:
           name: Deploy to Elastic Beanstalk
           command: eb use $CIRCLE_BRANCH-hotelwaze-website\ntimeout 1m eb deploy -v --staged || true\n
-  workflows:
-    version: 2
-    Test_and_Deploy:
-      jobs:
-        - test
-        - deploy_prod:
-            requires:
-              - test
-            filters:
-              branches:
-                only:
-                  - staging
-                  - master
+workflows:
+  version: 2
+  Test_and_Deploy:
+    jobs:
+      - test
+      - deploy_prod:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - staging
+                - master
