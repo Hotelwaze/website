@@ -16,7 +16,7 @@ const ContentRow = styled(Row)`
 `;
 
 const ImageColumn = styled(Column)`
-  @media only screen and ${breakpoints.device.md}{
+  @media only screen and ${breakpoints.device.md} {
     ${grids.col.four}
     order: 2;
   }
