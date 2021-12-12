@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import Button from '../../styles/Button.styled';
-import useShowState from '../../hooks';
+import { useShowState } from '../../hooks';
 import { useEffect } from 'react';
 import breakpoints from '../../lib/breakpoints';
 import { Container } from '../../styles/Grid.styled';

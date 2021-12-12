@@ -51,6 +51,8 @@ const handleColumnCount = column => {
             return `${grids.one}`;
         case 'two':
             return `${grids.two}`;
+        case 'two-half':
+            return `${grids.twohalf}`;
         case 'three':
             return `${grids.three}`;
         case 'four':

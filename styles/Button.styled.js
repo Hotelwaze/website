@@ -14,7 +14,6 @@ const Button = styled.button`
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: 12px;
   padding: 0.375rem 0.75rem;
   font-size: .75rem;
   border-radius: 0.25rem;
