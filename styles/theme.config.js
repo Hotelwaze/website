@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const defaultTheme = {
     bodyBackground: '#FAFAFA',
     bodyColor: '#212121',
+    borderColor: '#e5e5e5',
     fontFamily: 'Montserrat',
     fontSize: '0.875rem',
     primaryColor: '#023B6B',
@@ -365,6 +366,18 @@ export const ResetStyles = createGlobalStyle`
   [hidden] {
     display: none;
   }
+
+  label {
+    display: inline-block;
+  }
+
+  select {
+    word-wrap: normal;
+  }
+
+  button, select {
+    text-transform: none;
+  }
 `;
 
 export const GlobalStyles = createGlobalStyle`
@@ -420,5 +433,14 @@ export const GlobalStyles = createGlobalStyle`
 
     p {
       margin-top: 0;
+    }
+
+    @keyframes load {
+      from {
+        left: -150px;
+      }
+      to {
+        left: 100%;
+      }
     }
 `;
