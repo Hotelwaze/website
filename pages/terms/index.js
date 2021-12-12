@@ -16,7 +16,6 @@ const Terms = () => {
         <>
             <Head>
                 <title>Terms - Hotelwaze</title>
-                <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Wrapper>
                 <Container>

@@ -4,7 +4,7 @@ import breakpoints from '../../../lib/breakpoints';
 
 const Wrapper = styled.section`
   width: 100vw;
-  background: linear-gradient(180deg, rgba(2, 59, 107, 0.9) 53.29%, rgba(0, 74, 137, 0.9) 100%), url('/public/assets/images/home-banner-bg.jpg');
+  background: linear-gradient(180deg, rgba(2, 59, 107, 0.9) 53.29%, rgba(0, 74, 137, 0.9) 100%), url('/assets/images/home-banner-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

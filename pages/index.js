@@ -9,7 +9,6 @@ const Home = () => {
         <>
             <Head>
                 <title>Hotelwaze</title>
-                <link rel="icon" href="/favicon.ico"/>
             </Head>
             <HomeBanner/>
             <AppSection/>
