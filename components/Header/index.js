@@ -266,7 +266,7 @@ const Header = () => {
             <TopHeader>
                 <Container>
                     <TravelPackagesLink href="/travel-packages">Travel Packages</TravelPackagesLink>
-                    <PartnerRegistrationLink href="/partner-registration">Partner Registration</PartnerRegistrationLink>
+                    <PartnerRegistrationLink href="/https://forms.gle/KVX2JbNwpVdvBWL88" target="_blank">Partner Registration</PartnerRegistrationLink>
                 </Container>
             </TopHeader>
             <Container>
