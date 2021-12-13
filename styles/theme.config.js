@@ -427,7 +427,7 @@ export const GlobalStyles = createGlobalStyle`
     h1, h2, h3, h4, h5, h6 {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      font-weight: 500;
+      font-weight: 700;
       line-height: 1.2;
     }
 
