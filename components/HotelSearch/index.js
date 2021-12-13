@@ -83,6 +83,7 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
     useEffect(() => {
         const source = axios.CancelToken.source();
         fetchCountries();
+        fetchStates('Philippines');
         return () => source.cancel("Data fetching cancelled");
     }, []);
 
