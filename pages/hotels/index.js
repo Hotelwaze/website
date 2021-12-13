@@ -148,7 +148,7 @@ const Hotels = ({ }) => {
                                 <Title>Hotels Search</Title>
                                 <Description>Hotelwaze is your one stop destination for hotel search, helping you easily find a hotel near your current location or for your next trip. Search by city, country, hotel name, or map for hotels in more than 90 countries around the world.</Description>
                             </PageHeader>
-                            <HotelSearch initialCountryId="175" handleQuery={handleQuery} />
+                            <HotelSearch initialCountryId="175" initialCountryName="Philippines" handleQuery={handleQuery} />
                         </Column>
                     </Row>
                 </Container>
