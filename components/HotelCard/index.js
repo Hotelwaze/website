@@ -24,7 +24,10 @@ const Wrapper = styled.a`
   }
 `;
 
-const ImageWrapper = styled.div``;
+const ImageWrapper = styled.div`
+  height: 200px;
+  position: relative;
+`;
 
 const DetailsWrapper = styled.div`
   padding: 12px;
@@ -45,11 +48,11 @@ const HotelAddress = styled.p`
   letter-spacing: -0.5px;
 `;
 
-const HotelCard = ({ slug, name, address }) => (
+const HotelCard = ({ slug, name, address, image }) => (
     <Link  href={`/hotels/${slug}`}>
         <Wrapper>
             <ImageWrapper>
-                <Image src={noHotelImage} alt="Hotel image placeholder" responsive="true" />
+                <Image src={`${process.env.NEXT_PUBLIC_ASSETS_URL}thumbnail/${image.file}`} alt={name} responsive="true" layout="fill" />
             </ImageWrapper>
             <DetailsWrapper>
                 <HotelName>{name}</HotelName>
@@ -63,12 +66,17 @@ HotelCard.propTypes = {
     slug: PropTypes.string,
     name: PropTypes.string,
     address: PropTypes.string,
+    image: PropTypes.object,
 }
 
 HotelCard.defaultProps = {
     slug: '',
     name: '',
     address: '',
+    image: {
+        name: 'hotel-image',
+        file: 'no-hotel-image.jpg'
+    }
 }
 
 export default HotelCard;

@@ -95,7 +95,7 @@ const Hotels = ({ }) => {
 
     const listHotels = list.map((hotel, index) => {
             let address = '';
-            if (Object.prototype.hasOwnProperty.call(hotel, 'Addresses')) {
+            if (Object.prototype.hasOwnProperty.call(hotel, 'Addresses') && hotel.Addresses.length > 0 ) {
                 const addresses = hotel.Addresses[0];
                 if (addresses) {
                     if (Object.prototype.hasOwnProperty.call(addresses, 'address1')) {
@@ -105,6 +105,13 @@ const Hotels = ({ }) => {
                     }
                 }
             }
+            let image = {
+                name: 'hotel-image',
+                file: 'no-hotel-image.jpg'
+            }
+            if (Object.prototype.hasOwnProperty.call(hotel, 'Images') && hotel.Images.length > 0 ) {
+                const image = hotel.Images[0];
+            }
             if (list.length === index + 1) {
                 return (
                     <CardColumn ref={lastHotelElementRef} key={hotel.id}>
@@ -112,6 +119,7 @@ const Hotels = ({ }) => {
                             slug={hotel.slug}
                             name={hotel.name}
                             address={address}
+                            image={image}
                         />
                     </CardColumn>
                 )

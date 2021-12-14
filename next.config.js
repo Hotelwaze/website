@@ -3,4 +3,7 @@ module.exports = {
   env: {
     apiUrl: process.env.API_URL,
   },
+  images: {
+    domains: ['hotelwaze-production-space.sfo3.digitaloceanspaces.com'],
+  },
 }
