@@ -74,7 +74,7 @@ const HotelCard = ({ hotel }) => {
         <Link href={`/hotels/${hotel.slug}`}>
             <Wrapper>
                 <ImageWrapper>
-                    <Image width="600px" height="338px" src={`${process.env.NEXT_PUBLIC_ASSETS_URL}thumbnail/${image.file}`} alt={name}
+                    <Image width="600px" height="338px" src={`${process.env.NEXT_PUBLIC_ASSETS_URL}thumbnail/${image.file}`} alt={hotel.name}
                            responsive="true" layout="responsive"/>
                 </ImageWrapper>
                 <DetailsWrapper>
