@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+const getContents = (type, args) => axios.get(`${getApiUrl()}/${type}` + queryStringFromObject(args));
 const getContent = (type, args) => axios.get(`${getApiUrl()}/${type}` + queryStringFromObject(args));
 
 const queryStringFromObject = (object) => {
@@ -24,7 +25,8 @@ const queryStringFromObject = (object) => {
 const getApiUrl = () => process.env.apiUrl;
 
 const httpService = {
-    getContent
+    getContent,
+    getContents
 }
 
 export default httpService;
