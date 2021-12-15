@@ -56,7 +56,6 @@ const ButtonColumn = styled(Column)`
 `;
 
 const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, initialStateName, initialCityId, initialCityName, handleQuery }) => {
-    const router = useRouter();
     const [hotelName, setHotelName] = useState('');
     const [countries, setCountryList] = useState([]);
     const [countryId, setCountryId] = useState(initialCountryId);
@@ -83,13 +82,13 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
     useEffect(() => {
         const source = axios.CancelToken.source();
         fetchCountries();
-        fetchStates('175');
+        fetchStates(initialCountryId);
         return () => source.cancel("Data fetching cancelled");
     }, []);
 
     const fetchCountries = async () => {
         try {
-            const result = await httpService.getContent('countries',{
+            const result = await httpService.getContents('countries',{
                 status: 'active'
             });
             if (result.status === 200) {
@@ -109,7 +108,7 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
 
     const fetchStates = async (id) => {
         try {
-            const result = await httpService.getContent('states', {
+            const result = await httpService.getContents('states', {
                 status: 'active',
                 CountryId: id
             });
@@ -130,7 +129,7 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
 
     const fetchCities = async (id) => {
         try {
-            const result = await httpService.getContent('cities', {
+            const result = await httpService.getContents('cities', {
                 status: 'active',
                 StateId: id
             });

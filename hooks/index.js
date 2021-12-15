@@ -28,7 +28,7 @@ const useFetchContents = (contentType, args, offset) => {
         args.offset = offset;
 
         try {
-            const results = await httpService.getContent(contentType, queryArgs);
+            const results = await httpService.getContents(contentType, queryArgs);
             if (results.status === 200) {
                 setList(prevList => {
                     return [...new Set([...prevList, ...results.data.data.rows])]
