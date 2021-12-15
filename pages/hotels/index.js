@@ -94,32 +94,11 @@ const Hotels = ({ }) => {
     }, [loading, hasMore])
 
     const listHotels = list.map((hotel, index) => {
-            let address = '';
-            if (Object.prototype.hasOwnProperty.call(hotel, 'Addresses') && hotel.Addresses.length > 0 ) {
-                const addresses = hotel.Addresses[0];
-                if (addresses) {
-                    if (Object.prototype.hasOwnProperty.call(addresses, 'address1')) {
-                        address = addresses.address1;
-                    } else if (Object.prototype.hasOwnProperty.call(addresses, 'address2')) {
-                        address = addresses.address2;
-                    }
-                }
-            }
-            let image = {
-                name: 'hotel-image',
-                file: 'no-hotel-image.jpg'
-            }
-            if (Object.prototype.hasOwnProperty.call(hotel, 'Images') && hotel.Images.length > 0 ) {
-                image = hotel.Images[0];
-            }
             if (list.length === index + 1) {
                 return (
                     <CardColumn ref={lastHotelElementRef} key={hotel.id}>
                         <HotelCard
-                            slug={hotel.slug}
-                            name={hotel.name}
-                            address={address}
-                            image={image}
+                            hotel={hotel}
                         />
                     </CardColumn>
                 )
@@ -127,9 +106,7 @@ const Hotels = ({ }) => {
                 return (
                     <CardColumn key={hotel.id}>
                         <HotelCard
-                            slug={hotel.slug}
-                            name={hotel.name}
-                            address={address}
+                            hotel={hotel}
                         />
                     </CardColumn>
                 )
