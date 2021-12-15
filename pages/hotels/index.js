@@ -110,7 +110,7 @@ const Hotels = ({ }) => {
                 file: 'no-hotel-image.jpg'
             }
             if (Object.prototype.hasOwnProperty.call(hotel, 'Images') && hotel.Images.length > 0 ) {
-                const image = hotel.Images[0];
+                image = hotel.Images[0];
             }
             if (list.length === index + 1) {
                 return (
