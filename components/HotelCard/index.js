@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import Link from 'next/link';
-import noHotelImage from '../../public/assets/images/no-hotel-image.jpg';
+import Link from 'next/link';;
 import breakpoints from '../../lib/breakpoints';
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 
 const Wrapper = styled.a`
   display: block;
@@ -25,8 +25,8 @@ const Wrapper = styled.a`
 `;
 
 const ImageWrapper = styled.div`
-  height: 200px;
-  position: relative;
+  width: 100%;
+  height: auto;
 `;
 
 const DetailsWrapper = styled.div`
@@ -48,35 +48,46 @@ const HotelAddress = styled.p`
   letter-spacing: -0.5px;
 `;
 
-const HotelCard = ({ slug, name, address, image }) => (
-    <Link  href={`/hotels/${slug}`}>
-        <Wrapper>
-            <ImageWrapper>
-                <Image src={`${process.env.NEXT_PUBLIC_ASSETS_URL}thumbnail/${image.file}`} alt={name} responsive="true" layout="fill" />
-            </ImageWrapper>
-            <DetailsWrapper>
-                <HotelName>{name}</HotelName>
-                <HotelAddress>{address}</HotelAddress>
-            </DetailsWrapper>
-        </Wrapper>
-    </Link>
-);
+const HotelCard = ({ hotel }) => {
+    let address = '';
+    if (Object.prototype.hasOwnProperty.call(hotel, 'Addresses') && hotel.Addresses.length > 0 ) {
+        const addresses = hotel.Addresses[0];
+        if (addresses) {
+            if (Object.prototype.hasOwnProperty.call(addresses, 'address1')) {
+                address = addresses.address1;
+            } else if (Object.prototype.hasOwnProperty.call(addresses, 'address2')) {
+                address = addresses.address2;
+            }
+        }
+    }
+    let image = {};
+    if (hotel.Images.length > 0 ) {
+        image = hotel.Images[0];
+    } else {
+        image = {
+            name: 'hotel-image',
+            file: 'no-hotel-image.jpg'
+        }
+    }
 
-HotelCard.propTypes = {
-    slug: PropTypes.string,
-    name: PropTypes.string,
-    address: PropTypes.string,
-    image: PropTypes.object,
+    return (
+        <Link href={`/hotels/${hotel.slug}`}>
+            <Wrapper>
+                <ImageWrapper>
+                    <Image width="600px" height="338px" src={`${process.env.NEXT_PUBLIC_ASSETS_URL}thumbnail/${image.file}`} alt={name}
+                           responsive="true" layout="responsive"/>
+                </ImageWrapper>
+                <DetailsWrapper>
+                    <HotelName>{hotel.name}</HotelName>
+                    <HotelAddress>{address}</HotelAddress>
+                </DetailsWrapper>
+            </Wrapper>
+        </Link>
+    );
 }
 
-HotelCard.defaultProps = {
-    slug: '',
-    name: '',
-    address: '',
-    image: {
-        name: 'hotel-image',
-        file: 'no-hotel-image.jpg'
-    }
+HotelCard.propTypes = {
+    hotel: PropTypes.object.isRequired
 }
 
 export default HotelCard;
