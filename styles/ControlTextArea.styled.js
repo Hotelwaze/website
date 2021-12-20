@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-const ControlInput = styled.input.attrs(props => ({
-    className: props.className
-}))`
+const ControlTextArea = styled.textarea`
   display: block;
   width: 100%;
   padding: 0.5625rem 0.75rem;
@@ -16,6 +14,7 @@ const ControlInput = styled.input.attrs(props => ({
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  resize: vertical;
   
   &:focus {
     color: ${(props) => props.theme.bodyColor};
@@ -29,10 +28,6 @@ const ControlInput = styled.input.attrs(props => ({
     background-color: #e9ecef;
     opacity: 1;
   }
-  
-  &.is-invalid {
-    border-color: ${(props) => props.theme.dangerColor};
-  }
 `;
 
-export default ControlInput;
+export default ControlTextArea;

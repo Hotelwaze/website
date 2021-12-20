@@ -13,6 +13,10 @@ const FormGroup = styled.div`
       right: 12px;
     }
   }
+  
+  &.is-invalid~invalid-feedback {
+    display: block;
+  }
 `;
 
 export default FormGroup;

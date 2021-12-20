@@ -3,6 +3,8 @@ import axios from 'axios'
 const getContents = (type, args) => axios.get(`${getApiUrl()}/${type}` + queryStringFromObject(args));
 const getContent = (type, args) => axios.get(`${getApiUrl()}/${type}` + queryStringFromObject(args));
 
+const sendEmail = (type, args) => axios.post(`${getApiUrl()}/mail/${type}`, args);
+
 const queryStringFromObject = (object) => {
     const qry = [];
     // eslint-disable-next-line guard-for-in,no-restricted-syntax
@@ -26,7 +28,8 @@ const getApiUrl = () => process.env.apiUrl;
 
 const httpService = {
     getContent,
-    getContents
+    getContents,
+    sendEmail
 }
 
 export default httpService;
