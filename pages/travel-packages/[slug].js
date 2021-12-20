@@ -163,7 +163,7 @@ const TravelPackage = () => {
                     name: '',
                     email: '',
                     mobile: '',
-                    message: '',
+                    query: '',
                 });
                 setIsSubmitting(false);
                 return;
