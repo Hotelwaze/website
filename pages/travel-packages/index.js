@@ -118,7 +118,6 @@ const TravelPackages = () => {
                         <Column>
                             <PageHeader>
                                 <Title>Travel Packages</Title>
-                                <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet felis orci. Etiam et erat iaculis, vulputate eros nec, varius risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis ac lacinia massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum purus nec arcu viverra, vel laoreet ex gravida. Proin eu bibendum nibh. Praesent nec eros id arcu consectetur iaculis eu sit amet elit.</Description>
                             </PageHeader>
                         </Column>
                     </Row>
