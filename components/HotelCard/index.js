@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';;
 import breakpoints from '../../lib/breakpoints';
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
 
 const Wrapper = styled.a`
   display: block;

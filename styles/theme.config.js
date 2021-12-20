@@ -8,12 +8,18 @@ export const defaultTheme = {
     fontSize: '0.875rem',
     primaryColor: '#023B6B',
     accentColor: '#F61A88',
-    accentColorDark: '#F2037B',
+    accentColorDark: '#DF0070',
     secondary: '#FFFFFF',
     secondaryColor: '#343434',
     dullColor: '#343434',
     ternary: '#000000',
     codeColor: '#D121C5',
+    dangerColor: '#dc3545',
+    dangerColorLight: '#f5c2c7',
+    dangerColorLighter: '#f8d7da',
+    successColor: '#0f5132',
+    successColorLight: '#badbcc',
+    successColorLighter: '#d1e7dd',
 }
 
 export const ResetStyles = createGlobalStyle`
@@ -441,6 +447,18 @@ export const GlobalStyles = createGlobalStyle`
       }
       to {
         left: 100%;
+      }
+    }
+    
+    .invalid-feedback {
+      display: none;
+      width: 100%;
+      margin-top: 0.25rem;
+      font-size: .875em;
+      color: ${() => defaultTheme.dangerColor};
+      
+      &.has-error {
+        display: block;
       }
     }
 `;
