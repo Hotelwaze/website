@@ -1,14 +1,13 @@
-import Head from 'next/head';
 import styled from 'styled-components';
-import { Column, Container, Row } from '../../styles/Grid.styled';
+import { useRef, useState, useCallback } from 'react';
+import Head from 'next/head';
 import breakpoints from '../../lib/breakpoints';
-import HotelSearch from '../../components/HotelSearch';
-import HotelCard from '../../components/HotelCard';
+import { Column, Container, Row } from '../../styles/Grid.styled';
 import grids from '../../lib/grids';
-import { useRef, useState, useCallback, useEffect } from 'react';
-import SkeletonHotelCard from '../../components/SkeletonLoaders/SkeletonHotelCard';
+import TravelPackageCard from '../../components/TravelPackageCard';
 import { useFetchContents } from '../../hooks';
-import { useRouter } from 'next/router';
+import HotelCard from '../../components/HotelCard';
+import SkeletonHotelCard from '../../components/SkeletonLoaders/SkeletonHotelCard';
 
 const Wrapper = styled.div`
   min-height: 90vh;
@@ -33,14 +32,14 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 1.25rem;
+  font-size: 1rem;
 
   @media only screen and ${breakpoints.device.lg} {
     font-size: 1.125rem;
   }
 `;
 
-const HotelResults = styled.div``;
+const TravelPackagesResults = styled.div``;
 
 const CardColumn = styled(Column)`
   @media only screen and ${breakpoints.device.sm} {
@@ -54,10 +53,9 @@ const CardColumn = styled(Column)`
   }
 `;
 
-const Hotels = () => {
+const TravelPackages = () => {
     const [offset, setOffset] = useState(0);
     const [args, setArgs] = useState({
-        country: 'Philippines',
         limit: 100,
         status: 'active'
     });
@@ -67,22 +65,11 @@ const Hotels = () => {
         loading,
         error,
         hasMore,
-    } = useFetchContents('hotels', args, offset);
-
-    const handleQuery = (event) => {
-        setArgs({
-            name: event.name,
-            country: event.country,
-            state: event.state,
-            city: event.city,
-            limit: 100,
-            status: 'active'
-        })
-    }
+    } = useFetchContents('travel-packages', args, offset);
 
     const observer = useRef();
 
-    const lastHotelElementRef = useCallback(node => {
+    const lastPackageElementRef = useCallback(node => {
         if (loading) return;
         if (observer.current) observer.current.disconnect()
         observer.current = new IntersectionObserver(entries => {
@@ -93,20 +80,20 @@ const Hotels = () => {
         if (node) observer.current.observe(node)
     }, [loading, hasMore])
 
-    const listHotels = list.map((hotel, index) => {
+    const listPackages = list.map((travelPackage, index) => {
             if (list.length === index + 1) {
                 return (
-                    <CardColumn ref={lastHotelElementRef} key={hotel.id}>
-                        <HotelCard
-                            hotel={hotel}
+                    <CardColumn ref={lastPackageElementRef()} key={travelPackage.id}>
+                        <TravelPackageCard
+                            travelPackage={travelPackage}
                         />
                     </CardColumn>
                 )
             } else {
                 return (
-                    <CardColumn key={hotel.id}>
-                        <HotelCard
-                            hotel={hotel}
+                    <CardColumn key={travelPackage.id}>
+                        <TravelPackageCard
+                            travelPackage={travelPackage}
                         />
                     </CardColumn>
                 )
@@ -123,40 +110,39 @@ const Hotels = () => {
     return (
         <>
             <Head>
-                <title>Hotels Search - Hotelwaze</title>
+                <title>Travel Packages - Hotelwaze</title>
             </Head>
             <Wrapper>
                 <Container>
                     <Row>
                         <Column>
                             <PageHeader>
-                                <Title>Hotels Search</Title>
-                                <Description>Hotelwaze is your one stop destination for hotel search, helping you easily find a hotel near your current location or for your next trip. Search by city, country, hotel name, or map for hotels in more than 90 countries around the world.</Description>
+                                <Title>Travel Packages</Title>
+                                <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet felis orci. Etiam et erat iaculis, vulputate eros nec, varius risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis ac lacinia massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum purus nec arcu viverra, vel laoreet ex gravida. Proin eu bibendum nibh. Praesent nec eros id arcu consectetur iaculis eu sit amet elit.</Description>
                             </PageHeader>
-                            <HotelSearch initialCountryId="175" initialCountryName="Philippines" handleQuery={handleQuery} />
                         </Column>
                     </Row>
                 </Container>
-                <HotelResults>
+                <TravelPackagesResults>
                     <Container>
                         <Row>
-                            {listHotels}
+                            {listPackages}
                         </Row>
                     </Container>
-                </HotelResults>
+                </TravelPackagesResults>
                 { loading && (
-                    <HotelResults>
+                    <TravelPackagesResults>
                         <Container>
                             <Row>
                                 {listSkeletonCards}
                             </Row>
                         </Container>
-                    </HotelResults>
+                    </TravelPackagesResults>
                 )}
                 <div>{error && 'Error'}</div>
             </Wrapper>
         </>
-    );
+    )
 }
 
-export default Hotels;
+export default TravelPackages;
