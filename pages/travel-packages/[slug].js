@@ -132,6 +132,7 @@ const TravelPackage = () => {
     const [travelPackage, setTravelPackage] = useState(null);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const router = useRouter();
     const { slug } = router.query;
 
@@ -144,9 +145,10 @@ const TravelPackage = () => {
 
     // get functions to build form with useForm() hook
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
-    const { errors, isSubmitting } = formState;
+    const { errors } = formState;
 
     const submitForm = async (data) => {
+        setIsSubmitting(true);
         try {
             const result = await httpService.sendEmail('travel-package-inquiry',{
                 name: data.name,
@@ -157,12 +159,20 @@ const TravelPackage = () => {
             });
             if (result.status === 200) {
                 setSuccess(result.data.message);
-                reset({});
+                reset({
+                    name: '',
+                    email: '',
+                    mobile: '',
+                    query: '',
+                });
+                setIsSubmitting(false);
                 return;
             }
+
             throw new Error("Failed to send message.");
 
         } catch (error) {
+            setIsSubmitting(false);
             if(axios.isCancel(error)){
                 setError('Sending message has been cancelled.');
             }else{
