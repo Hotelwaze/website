@@ -250,7 +250,7 @@ const TravelPackage = () => {
                         <Column>
                             <InquiryWrapper>
                                 <InquiryHeader>Inquire</InquiryHeader>
-                                <p>To know more about about this travel package, send us a message and we will get back to you as soon as possible.</p>
+                                <p>To know more about this travel package, send us a message and we will get back to you as soon as possible.</p>
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <Row>
                                         {success &&
