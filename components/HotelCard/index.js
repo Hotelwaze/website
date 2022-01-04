@@ -48,20 +48,10 @@ const HotelAddress = styled.p`
 `;
 
 const HotelCard = ({ hotel }) => {
-    let address = '';
-    if (Object.prototype.hasOwnProperty.call(hotel, 'Addresses') && hotel.Addresses.length > 0 ) {
-        const addresses = hotel.Addresses[0];
-        if (addresses) {
-            if (Object.prototype.hasOwnProperty.call(addresses, 'address1')) {
-                address = addresses.address1;
-            } else if (Object.prototype.hasOwnProperty.call(addresses, 'address2')) {
-                address = addresses.address2;
-            }
-        }
-    }
+    let address = hotel.addresses.length > 0 ? hotel.addresses[0].address1 : '';
     let image = {};
-    if (hotel.Images.length > 0 ) {
-        image = hotel.Images[0];
+    if (hotel.images.length > 0 ) {
+        image = hotel.images[0];
     } else {
         image = {
             name: 'hotel-image',
@@ -73,7 +63,7 @@ const HotelCard = ({ hotel }) => {
         <Link href={`/hotels/${hotel.slug}`}>
             <Wrapper>
                 <ImageWrapper>
-                    <Image width="600px" height="338px" src={`${process.env.NEXT_PUBLIC_ASSETS_URL}thumbnail/${image.file}`} alt={hotel.name}
+                    <Image width="600px" height="338px" src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${image.file}`} alt={hotel.name}
                            responsive="true" layout="responsive"/>
                 </ImageWrapper>
                 <DetailsWrapper>

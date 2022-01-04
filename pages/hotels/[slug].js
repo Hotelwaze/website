@@ -124,11 +124,12 @@ const Hotel = () => {
                         <DetailsColumn>
                             <HotelDetails>
                                 <HotelName>{hotel.name}</HotelName>
-                                {hotel.Addresses.length > 0 &&
+                                {hotel.addresses.length > 0 &&
                                 <DetailRow>
                                     <FontAwesomeIcon size="lg" color="#F61A88" icon={faMapMarkerAlt} fixedWidth={true} />
                                     <Detail>
-                                        {hotel.Addresses[0].address1}
+                                        {hotel.addresses[0].address1}, {hotel.addresses[0].city.name}, {hotel.addresses[0].state.name} {hotel.addresses[0].zip}, {hotel.addresses[0].country.name}
+
                                     </Detail>
                                 </DetailRow>
                                 }
@@ -158,10 +159,10 @@ const Hotel = () => {
                                 }
                             </HotelDetails>
                         </DetailsColumn>
-                        {hotel.Places &&
+                        {hotel.places &&
                         <DetailsColumn>
                             <MapWrapper>
-                                <Map location={{lat: hotel.Places[0].coordinates.coordinates[1], lng: hotel.Places[0].coordinates.coordinates[0]}}/>
+                                <Map location={{lat: hotel.places[0].coordinates.coordinates[1], lng: hotel.places[0].coordinates.coordinates[0]}}/>
                             </MapWrapper>
                         </DetailsColumn>
                         }
