@@ -5,7 +5,7 @@ module.exports = {
   },
   images: {
     domains: [
-        'hotelwaze-production-space.sfo3.digitaloceanspaces.com',
+        'staging.api.hotelwaze.com',
         'localhost'
     ],
   },
