@@ -58,7 +58,7 @@ const Hotels = () => {
     const [offset, setOffset] = useState(0);
     const [args, setArgs] = useState({
         country: 'Philippines',
-        limit: 100,
+        limit: 50,
         status: 'active'
     });
     const skeletonCardCount = [...Array(12).keys()];
