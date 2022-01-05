@@ -7,13 +7,13 @@ jobs:
       - image: arvindr226/alpine-ssh
     steps:
       - checkout
-      - run: ssh -oStrictHostKeyChecking=no -v $DROPLET_USER@$STAGING_DROPLET_IP "./deploy.sh"
+      - run: ssh -oStrictHostKeyChecking=no -v $DROPLET_USER@$STAGING_DROPLET_IP "./deploy_website.sh"
   pull-and-build-production:
     docker:
       - image: arvindr226/alpine-ssh
     steps:
       - checkout
-      - run: ssh -oStrictHostKeyChecking=no -v $DROPLET_USER@$PRODUCTION_DROPLET_IP "./deploy.sh"
+      - run: ssh -oStrictHostKeyChecking=no -v $DROPLET_USER@$PRODUCTION_DROPLET_IP "./deploy_website.sh"
 # Orchestrate our job run sequence
 workflows:
   version: 2
