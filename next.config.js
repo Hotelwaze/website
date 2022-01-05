@@ -6,6 +6,7 @@ module.exports = {
   images: {
     domains: [
         'staging.api.hotelwaze.com',
+        'api2.hotelwaze.com',
         'localhost'
     ],
   },
