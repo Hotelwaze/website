@@ -59,13 +59,10 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
     const [hotelName, setHotelName] = useState('');
     const [countries, setCountryList] = useState([]);
     const [countryId, setCountryId] = useState(initialCountryId);
-    const [countryName, setCountryName] = useState(initialCountryName);
     const [states, setStateList] = useState([]);
     const [stateId, setStateId] = useState(initialStateId);
-    const [stateName, setStateName] = useState(initialStateName);
     const [cities, setCitiesList] = useState([]);
     const [cityId, setCityId] = useState(initialCityId);
-    const [cityName, setCityName] = useState(initialCityName);
 
     const listCountries = countries.map((country) =>
         <option value={country.id} key={country.id}>{country.name}</option>
@@ -89,10 +86,12 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
     const fetchCountries = async () => {
         try {
             const result = await httpService.getContents('countries',{
-                status: 'active'
+                status: 'active',
+                offset: 0,
+                limit: 500,
             });
             if (result.status === 200) {
-                setCountryList(result.data.data);
+                setCountryList(result.data.data.rows);
                 return;
             }
             throw new Error("Failed to fetch countries");
@@ -110,10 +109,12 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
         try {
             const result = await httpService.getContents('states', {
                 status: 'active',
+                offset: 0,
+                limit: 500,
                 CountryId: id
             });
             if (result.status === 200) {
-                setStateList(result.data.data);
+                setStateList(result.data.data.rows);
                 return;
             }
             throw new Error("Failed to fetch states");
@@ -131,10 +132,12 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
         try {
             const result = await httpService.getContents('cities', {
                 status: 'active',
+                offset: 0,
+                limit: 500,
                 StateId: id
             });
             if (result.status === 200) {
-                setCitiesList(result.data.data);
+                setCitiesList(result.data.data.rows);
                 return;
             }
             throw new Error("Failed to fetch states");
@@ -155,26 +158,26 @@ const HotelSearch = ({ initialCountryId, initialCountryName, initialStateId, ini
     const handleCountryChange = (event) => {
         fetchStates(event.target.value);
         setCountryId(event.target.value);
-        setCountryName(event.target.selectedOptions[0].text);
+        setStateId('');
+        setCityId('');
     }
 
     const handleStateChange = (event) => {
         fetchCities(event.target.value);
         setStateId(event.target.value);
-        setStateName(event.target.selectedOptions[0].text);
+        setCityId('');
     }
 
     const handleCityChange = (event) => {
         setCityId(event.target.value);
-        setCityName(event.target.selectedOptions[0].text);
     }
 
     const handleSearchSubmit = () => {
         handleQuery({
             name: hotelName,
-            country: countryName,
-            state: stateName,
-            city: cityName,
+            CountryId: countryId,
+            StateId: stateId,
+            CityId: cityId,
         });
     }
 
