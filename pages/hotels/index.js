@@ -57,8 +57,8 @@ const CardColumn = styled(Column)`
 const Hotels = () => {
     const [offset, setOffset] = useState(0);
     const [args, setArgs] = useState({
-        country: 'Philippines',
-        limit: 50,
+        CountryId: 175,
+        limit: 100,
         status: 'active'
     });
     const skeletonCardCount = [...Array(12).keys()];
@@ -70,14 +70,28 @@ const Hotels = () => {
     } = useFetchContents('hotels', args, offset);
 
     const handleQuery = (event) => {
-        setArgs({
-            name: event.name,
-            country: event.country,
-            state: event.state,
-            city: event.city,
+        const args = {
             limit: 100,
             status: 'active'
-        })
+        };
+
+        if (event.name) {
+            args.name = event.name;
+        }
+
+        if (event.CountryId) {
+            args.CountryId = event.CountryId;
+        }
+
+        if (event.StateId) {
+            args.StateId = event.StateId;
+        }
+
+        if (event.CityId) {
+            args.CityId = event.CityId;
+        }
+
+        setArgs(args);
     }
 
     const observer = useRef();
