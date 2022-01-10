@@ -14,7 +14,7 @@ const Wrapper = styled.a`
   cursor: pointer;
 
   @media only screen and ${breakpoints.device.md} {
-    height: 480px;
+    height: 530px;
   }
 `;
 
