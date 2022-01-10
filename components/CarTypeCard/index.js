@@ -39,8 +39,8 @@ const Description = styled.div``;
 
 const CarTypeCard = ({ carType }) => {
     let image = {};
-    if (carType.Images.length > 0 ) {
-        image = carType.Images[0];
+    if (carType.images.length > 0 ) {
+        image = carType.images[0];
     } else {
         image = {
             name: 'hotel-image',

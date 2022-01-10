@@ -86,8 +86,8 @@ const DetailsButton = styled(ButtonLink)`
 const TravelPackageCard = ({ travelPackage }) => {
     const excerpt = common.getContentExcerpt(travelPackage.description);
     let image = {};
-    if (travelPackage.Images.length > 0 ) {
-        image = travelPackage.Images[0];
+    if (travelPackage.images.length > 0 ) {
+        image = travelPackage.images[0];
     } else {
         image = {
             name: 'hotel-image',
