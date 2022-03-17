@@ -224,13 +224,13 @@ const TravelPackage = () => {
                         <Column>
                             <PackageTitle>{travelPackage.title}</PackageTitle>
                         </Column>
-                        {travelPackage.Images[0] &&
+                        {travelPackage.images[0] &&
                         <DetailsColumnLeft>
                             <PackageDetails>
 
                                 <ImageWrapper>
                                     <Image width="1440px" height="810px"
-                                           src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${travelPackage.Images[0].file}`}
+                                           src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${travelPackage.images[0].file}`}
                                            alt={travelPackage.title}
                                            priority={true}
                                            responsive="true" layout="responsive"/>
