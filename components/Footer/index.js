@@ -177,10 +177,9 @@ const Footer = () => (
                         <TextOneColumn>
                             <Content>
                                 <Heading>Hotelwaze Philippines</Heading>
-                                <Text>7th Floor Unit B 8 Rockwell<br />
-                                    Hidalgo Drive, Rockwell Center<br />
-                                    Barangay Poblacion, Makati City<br />
-                                    1220 Metro Manila, Philippines</Text>
+                                <Text>2084 San Antonio Subdivision,<br />
+                                San Antonio, Floridablanca<br />
+                                2006 Pampanga, Philippines</Text>
                                 <Text>Email: info@hotelwaze.com<br/>
                                     Call or SMS: +63 970 134 0934</Text>
                             </Content>
