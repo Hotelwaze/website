@@ -198,7 +198,7 @@ const MobileMenuHeader = styled.div`
 
 const MenuCloseButton = styled(MenuToggleButton)`
     opacity: 0.75;
-  margin-right: 12px;
+    margin-right: 12px;
 `;
 
 const CloseIcon = styled(Image)`
@@ -283,7 +283,7 @@ const Header = () => {
                                 <PrimaryMenuLink href="/cars">Cars</PrimaryMenuLink>
                             </PrimaryMenuItem>
                             <PrimaryMenuItem>
-                                <PrimaryMenuLink href="/blog">Blog</PrimaryMenuLink>
+                                <PrimaryMenuLink href="https://blog.hotelwaze.com">Blog</PrimaryMenuLink>
                             </PrimaryMenuItem>
                         </PrimaryMenu>
                         <TravelPackagesLink href="/travel-packages">Travel Packages</TravelPackagesLink>
@@ -310,7 +310,7 @@ const Header = () => {
                         <MobileMenuLink href="/cars">Cars</MobileMenuLink>
                     </MobileMenuItem>
                     <MobileMenuItem>
-                        <MobileMenuLink href="/blog">Blog</MobileMenuLink>
+                        <MobileMenuLink href="https://blog.hotelwaze.com">Blog</MobileMenuLink>
                     </MobileMenuItem>
                 </MobileMenu>
             </MobileMenuWrapper>

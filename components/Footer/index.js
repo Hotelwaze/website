@@ -141,7 +141,7 @@ const Footer = () => (
                                     <Link href="/cars" passHref>
                                         <NavLink>Cars</NavLink>
                                     </Link>
-                                    <Link href="/blog" passHref>
+                                    <Link href="https://blog.hotelwaze.com" passHref>
                                         <NavLink>Blog</NavLink>
                                     </Link>
                                     <Link href="/travel-packages" passHref>
