@@ -5,6 +5,9 @@ const getContent = (type, args) => axios.get(`${getApiUrl()}/${type}` + queryStr
 
 const sendEmail = (type, args) => axios.post(`${getApiUrl()}/mail/${type}`, args);
 
+const checkPasswordResetLink = (args) => axios.get(`${getProdApiUrl()}/auth/password-reset-link-check` + queryStringFromObject(args));
+const resetPassword = (args) => axios.post(`${getProdApiUrl()}/auth/password-reset`, args);
+
 const queryStringFromObject = (object) => {
     const qry = [];
     // eslint-disable-next-line guard-for-in,no-restricted-syntax
@@ -26,10 +29,14 @@ const queryStringFromObject = (object) => {
 
 const getApiUrl = () => process.env.apiUrl;
 
+const getProdApiUrl = () => process.env.apiUrlProd;
+
 const httpService = {
     getContent,
     getContents,
-    sendEmail
+    sendEmail,
+    checkPasswordResetLink,
+    resetPassword
 }
 
 export default httpService;
