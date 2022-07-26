@@ -94,17 +94,20 @@ const Terms = () => {
                                 <h3>Declined Booking</h3>
                                 <p>If our first rental partner is unable to validate your reservation due to unavailability, we will make every effort to submit your reservation to another rental partner for confirmation.</p>
                                 <h3>Booking Option</h3>
-                                <p>The rental fee is charged in full at the time of reservation.</p>
+                                <p>The rental fee is charged 20% at the time of reservation.</p>
                                 <p>Any booking that cannot be checked is canceled, along with any payments that have been made.</p>
                                 <p>Any app purchases will be handled in the local currency of the rental partner.</p>
                                 <p>Any additional equipment or facilities purchased locally will also be paid in the local currency of the car rental partner.</p>
                                 <p>Any remaining rental balance is charged in local currency at the destination.</p>
+                                <p>you must pay the remaining 80% payment upfront on the partner </p>
                                 <h3>Cancellation Policy</h3>
-                                <p>The Renter&lsquo;s First Cancellation made online via the app within 5 minutes of the rental start is free of charge. Cancellations made after 5 minutes will be charged a non-refundable maximum fee of 5% of the 1-day booking amount in Philippine currency.</p>
-                                <p>Hotelwaze will charge a non-refundable limit of 5% Philippine currency for every consecutive Renter&lsquo;s second Cancellation online via Car Booking after the rental launch. On a third cancellation online via the app after the rental begins, Hotelwaze will charge the renter a non-refundable full sum equal to one day&lsquo;s worth of the car booked in Philippine currency.</p>
-                                <p>*Your currency sum could be slightly higher or lower depending on the currency exchange rate used by your bank.</p>
-                                <p>You won&lsquo;t get a refund if you don&lsquo;t turn up or don&lsquo;t have the proper documentation (Voucher, Hotelwaze app with pairing code, 2 valid government-issued I.D driving licenses, etc.)</p>
-                                <p>Over a 24-hour cycle, the number of cancellations is counted. For instance, suppose you booked a rental car for April 21 at 8 a.m. and then canceled it. That&lsquo;ll be the first time you&lsquo;ve had to cancel. If you book again on April 22nd at 8 a.m., you will be refunded. The cancellation period has been reset, and your first cancellation will still be counted.</p>
+                                <p>The renter can cancel the booking anytime if the partner have not confirmed the booking once the booking is confirmed the 20% will be charge to you credit card and booking cannot be cancel</p>
+                                <p>The 20% is non refundable if the partner cancel the booking we will make every effort to submit your reservation to another rental partner for confirmation</p>
+                                {/*<p>The Renter&lsquo;s First Cancellation made online via the app within 5 minutes of the rental start is free of charge. Cancellations made after 5 minutes will be charged a non-refundable maximum fee of 5% of the 1-day booking amount in Philippine currency.</p>*/}
+                                {/*<p>Hotelwaze will charge a non-refundable limit of 5% Philippine currency for every consecutive Renter&lsquo;s second Cancellation online via Car Booking after the rental launch. On a third cancellation online via the app after the rental begins, Hotelwaze will charge the renter a non-refundable full sum equal to one day&lsquo;s worth of the car booked in Philippine currency.</p>*/}
+                                {/*<p>*Your currency sum could be slightly higher or lower depending on the currency exchange rate used by your bank.</p>*/}
+                                {/*<p>You won&lsquo;t get a refund if you don&lsquo;t turn up or don&lsquo;t have the proper documentation (Voucher, Hotelwaze app with pairing code, 2 valid government-issued I.D driving licenses, etc.)</p>*/}
+                                {/*<p>Over a 24-hour cycle, the number of cancellations is counted. For instance, suppose you booked a rental car for April 21 at 8 a.m. and then canceled it. That&lsquo;ll be the first time you&lsquo;ve had to cancel. If you book again on April 22nd at 8 a.m., you will be refunded. The cancellation period has been reset, and your first cancellation will still be counted.</p>*/}
                                 <h2>Amendments and Changes</h2>
                                 <h3>Changes to a Confirmed Booking</h3>
                                 <p>Done via the app.</p>
