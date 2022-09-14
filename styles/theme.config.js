@@ -6,7 +6,7 @@ export const defaultTheme = {
     borderColor: '#e5e5e5',
     fontFamily: 'Montserrat',
     fontSize: '0.875rem',
-    primaryColor: '#023B6B',
+    primaryColor: '#cc0000',
     accentColor: '#F61A88',
     accentColorDark: '#DF0070',
     secondary: '#FFFFFF',
