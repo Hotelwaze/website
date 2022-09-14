@@ -406,7 +406,7 @@ const Faqs = () => {
 
                                 <h2>Partners Booking Information</h2>
 
-                                <p>Accepting booking requests from our clients can be monitored on your partner's account. The price of the booking fare is the amount you put, and 80% of the total amount is the only price you can charge to our renters and this can be done using your online payment system.</p>
+                                <p>Accepting booking requests from our clients can be monitored on your partners account. The price of the booking fare is the amount you put, and 80% of the total amount is the only price you can charge to our renters and this can be done using your online payment system.</p>
 
                                 <p></p>
 
