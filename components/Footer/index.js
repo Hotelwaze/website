@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Column, Container, Row } from '../../styles/Grid.styled';
 import Image from 'next/image';
-import brand from '../../public/assets/images/brand.png';
+import brand from '../../public/assets/images/logo-web.png';
 import logotype from '../../public/assets/images/logotype.svg';
 import Link from 'next/link';
 import breakpoints from '../../lib/breakpoints';
@@ -18,15 +18,15 @@ const FooterBrand = styled.div`
 `;
 
 const Brand = styled.div`
-  width: 200px;
+
   margin: 0 auto;
   
   @media only screen and ${breakpoints.device.md} {
-    width: 150px;
+    width: 170px;
   }
 
   @media only screen and ${breakpoints.device.lg} {
-    width: 180px;
+    width: 200px;
   }
 `;
 

@@ -5,7 +5,7 @@ import { useShowState } from '../../hooks';
 import { useEffect } from 'react';
 import breakpoints from '../../lib/breakpoints';
 import { Container } from '../../styles/Grid.styled';
-import logotype from '../../public/assets/images/logotype.svg';
+import logotype from '../../public/assets/images/logo-web.png';
 
 const HeaderWrapper = styled.header`
   background: ${props => props.theme.primaryColor};
@@ -117,7 +117,7 @@ const Brand = styled.a`
 
   @media only screen and ${breakpoints.device.lg}{
     width: 200px;
-    height: 32px;
+    height: 80px;
     margin-bottom: 8px;
   }
 `;
