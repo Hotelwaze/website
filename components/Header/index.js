@@ -120,6 +120,11 @@ const Brand = styled.a`
     height: 80px;
     margin-bottom: 8px;
   }
+  
+    @media only screen and (max-width: 600px) {
+      width: 100px;
+       height: 25px;
+    }
 `;
 
 const Navigation = styled.div`
