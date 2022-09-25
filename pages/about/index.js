@@ -32,7 +32,7 @@ const About = () => {
                             <PageWrapper>
                                 <PageTitle>About Hotelwaze</PageTitle>
                                 <p>Hotelwaze.com is your most reliable directory of hotels. We have verified the official hotel websites which are regularly checked and updated. We assure clients to receive the most affordable and reasonable price available straight from hotels’ page.</p>
-                                <h2>Vision</h2>
+                                <h2>Mission</h2>
                                 <p>To be the top directory of hotel websites where clients can find the most affordable and reasonable price available straight from hotels’ page.</p>
                                 <h2>Vision</h2>
                                 <p>Provide a stress free and hassle free link from clients to partnered hotels’ official websites through easier access to information, user-friendly mobile app, and quality customer service.</p>
